@@ -1,28 +1,44 @@
 import './App.css';
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Nav from './components/Nav';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
+      
+
+      <Routes>
+        {/* <Route path="/" element={<Intro />} /> */}
+      </Routes>
+
+
+
+
+
 
       <Nav />
       
-      <div className='intro intro_full'>
-        <div className='intro_text'>
-          <div>안녕하세요!</div>
-          <div>프런트엔드 개발자</div>
-          <div>
-            <span>김다빈</span>
-            <span>입니다.</span>
-          </div>
-        </div>
-        <div className='intro_img'>
-          <img src={process.env.PUBLIC_URL + "/img/img_1.jpg"}/>
-        </div>
+      <div className='intro intro_full wrapper'>
+
+         <div className='container'>
+               djd?D
+         </div>
+        
       </div>
 
+
+
     </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+
+<div className='intro_img'>
+          <img src={process.env.PUBLIC_URL + "/img/img_1.jpg"}/>
+        </div>
