@@ -13,7 +13,7 @@ body{
     --purple : #8b6add;
 
     --font-size-XL : 50px;
-    --font-size-L : 35px;
+    --font-size-L : 40px;
     --font-size-M : 18px;
     --font-size-s : 13px;
 
@@ -135,14 +135,21 @@ body{
 
 .intro .intro_log{ 
     margin: 30px 0px;
+    display: flex;
 }
 
-.intro .intro_log > span { 
-    margin-right: 10px;
+.intro .intro_log > a { 
+    margin-right: 15px;
     background-color: var(--purple);
     color: white;
     border-radius: 50%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
     height: 30px;
+    width: 30px;
 }
 
 .intro .intro_text button { 
@@ -326,4 +333,60 @@ body{
 
 .SkillName >span:first-child{ 
     margin-right: 10px;
+}
+
+
+/* portfolio */
+.portfolio{
+    /* border: 1px solid red; */
+    width: 80%;
+}
+
+.portfolio h1 { 
+    font-size: var(--font-size-L);
+    text-align: center;
+}
+
+.portfolio .project_wrap { 
+    /* border: 1px solid blue; */
+
+}
+
+.portfolio .project_wrap > span { 
+    font-size: 23px;
+    font-weight: bold;
+    color: #8b6add;    
+}
+
+.portfolio .project_item {
+    /* border: 1px solid red; */
+    margin-top: 20px;
+
+    display: flex;
+}
+
+.portfolio .project_item .project_img {
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.portfolio .project_item .project_img img { 
+    width: 100%;
+}
+
+.portfolio .project_item .project_detail { 
+    /* border: 1px solid green; */
+    margin-left: 30px;
+}
+
+.portfolio .project_detail .project_title { 
+    font-size: var(--font-size-M);
+    border-radius: 5px;
+}
+
+.portfolio .project_detail .project_intro {
+    font-size: var(--font-size-s);
+    margin: 5px 0px;
+    color: gray;
 }

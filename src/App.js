@@ -10,6 +10,7 @@ import {
   faDatabase,
   faGear,
   faBlog,
+  faMagnifyingGlass
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -34,16 +35,15 @@ function App() {
                 <span>Davin</span>
               </div>
               <span>Frontend Developer</span>
-              <span>즐겁게 도전하는 프런트엔드 개발자 김다빈입니다. </span>
 
               <div className="intro_log">
-                <span>
+                <a href="https://github.com/davin1221">
                     <FontAwesomeIcon icon={faGithub} />
-                  </span>
-                  <span>
+                </a>
+                <a href="https://dvcoding.tistory.com/">
                     <FontAwesomeIcon icon={faBlog} />
-                  </span>
-                  <button>
+                </a>
+                <button>
                   Contact Me __ <FontAwesomeIcon icon={faHeart} />
                 </button>
               </div>
@@ -168,7 +168,7 @@ function App() {
                       <FontAwesomeIcon icon={faDatabase} />
                     </span>
                     <span>
-                      DabaBase
+                      DataBase
                     </span>
                   </div>
                   <div className="item_bottom">
@@ -197,7 +197,37 @@ function App() {
           {/* Portfolio */}
           <div className="wrapper" id="Portfolio">
             <div className="container portfolio">
-              포폴
+              <h1>Portfolio</h1>
+
+              <div className="portfolio_wrap">
+                <div className="project_wrap">
+                  <span>Team Porject</span>
+                  <div className="project_item">
+                    <div className="project_img">
+                      <img src={process.env.PUBLIC_URL + "/img/project/letsVegan.png"} />
+                    </div>
+
+                    <div className="project_detail">
+                      <span className="project_title">Let's Vegan</span>
+                      <div className="project_intro">
+                        지도 API 기반 레스토랑 검색 플랫폼 서비스 
+                      </div>
+
+                      <div className="project_skill">
+                        
+                      </div>
+                     
+                     
+                      <button>
+                        자세히보기__
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                      </button>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
             </div>
 
           </div>
