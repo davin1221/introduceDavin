@@ -1,52 +1,78 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faJava, faHtml5, faCss3Alt, faJs, faReact, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faOtter, faStore, faServer } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { faCode, faTerminal, faDatabase, faGear } from "@fortawesome/free-solid-svg-icons";
+import Skill from "./Skill";
 
-const Skills = ({skillName}) => { 
+const Skills = () => { 
+    return <div className="wrapper" id="Skills">
+    <div className="container skills">
+      <h1>Skills</h1>
 
-    let skill; 
+      <div className="skill_wrap">
 
-    switch(skillName) {
-        case "HTML":
-            skill = <FontAwesomeIcon icon={faHtml5}/>
-            break;
-        case "CSS":
-            skill = <FontAwesomeIcon icon={faCss3Alt}/>
-            break;
-        case "JavaScript":
-            skill = <FontAwesomeIcon icon={faJs}/>
-            break;
-        case "React":
-            skill = <FontAwesomeIcon icon={faReact}/>
-            break;
-        case "Git":
-            skill = <FontAwesomeIcon icon={faGithub}/>
-            break;
-        case "Oracle":
-            skill = <FontAwesomeIcon icon={faServer}/>
-            break;
-        case "dbeaver":
-            skill = <FontAwesomeIcon icon={faOtter}/>
-            break;
-        case "Redux":
-            skill = <FontAwesomeIcon icon={faStore}/>
-            break;
-        case "Java":
-            skill = <FontAwesomeIcon icon={faJava}/>
-            break;
-    }
+        <div className="skill_item">
+          <div className="item_top">
+            <span>
+              <FontAwesomeIcon icon={faCode} />
+            </span>
+            <span>
+              Frontend
+            </span>
+          </div>
+          <div className="item_bottom">
+            <Skill skillName={"HTML"} />
+            <Skill skillName={"CSS"} />
+            <Skill skillName={"JavaScript"} />
+            <Skill skillName={"React"} />
+            <Skill skillName={"Redux"} />
+          </div>
+        </div>
 
-    
-    return  <span className="SkillName">
-        <span>
-            {skill}
-        </span>
-        <span>
-            {skillName}
-        </span>
-        
-  </span>
+
+          <div className="skill_item">
+            <div className="item_top">
+              <span>
+               <FontAwesomeIcon icon={faTerminal} />
+              </span>
+              <span>
+              Backend
+              </span>
+            </div>
+            <div className="item_bottom">
+              <Skill skillName={"Java"} />
+            </div>
+          </div>
+
+          <div className="skill_item">
+            <div className="item_top">
+              <span>
+                <FontAwesomeIcon icon={faDatabase} />
+              </span>
+              <span>
+                DataBase
+              </span>
+            </div>
+            <div className="item_bottom">
+              <Skill skillName={"Oracle"} />
+            </div>
+          </div>
+
+          <div className="skill_item">
+            <div className="item_top">
+              <span>
+                <FontAwesomeIcon icon={faGear} />
+              </span>
+              <span>
+                Tool
+              </span>
+            </div>
+            <div className="item_bottom">
+              <Skill skillName={"Git"} />
+              <Skill skillName={"dbeaver"} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 }
 
 export default Skills;

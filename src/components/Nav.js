@@ -4,6 +4,14 @@ import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 
 const Nav = () => { 
 
+    const handleMenu = (menu) => { 
+
+        const targetMenu = document.getElementById(menu)
+        targetMenu.scrollIntoView({ behavior: 'smooth' });
+        // console.log(menu)
+
+    }
+
     return <nav className="Nav">
         <div className="logo">
             Davin
@@ -11,17 +19,21 @@ const Nav = () => {
 
         <div className="full-width-nav">
             <ul>
-                <li>
-                    <a href="#About">About</a>
+                <li onClick={()=>handleMenu("About")}>
+                    About
+                    {/* <a href="#About">About</a> */}
                 </li>
-                <li>
-                    <a href="#Skills">Skills</a>
+                <li onClick={()=>handleMenu("Skills")}>
+                    Skill
+                    {/* <a href="#Skills">Skills</a> */}
                 </li>
-                <li>
-                    <a href="#Portfolio">Portfolio</a>
+                <li onClick={()=>handleMenu("Portfolio")}>
+                    Portfolio
+                    {/* <a href="#Portfolio">Portfolio</a> */}
                 </li>
-                <li>
-                    <a href="#Contact">Contact</a>
+                <li onClick={()=>handleMenu("Contact")}>
+                    Contact
+                    {/* <a href="#Contact">Contact</a> */}
                 </li>
             </ul>
 
