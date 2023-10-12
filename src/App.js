@@ -10,13 +10,19 @@ import {
   faDatabase,
   faGear,
   faBlog,
-  faMagnifyingGlass
+  faMagnifyingGlass, 
+  faComputerMouse,
+  faArrowDown,
+  faPhone,
+  faEnvelope,
+  faPaperPlane
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import Nav from "./components/Nav";
 import Skills from "./components/Skills";
+import TopBtn from "./components/TopBtn";
 
 function App() {
   return (
@@ -27,7 +33,7 @@ function App() {
         <Nav />
 
         {/* intro */}
-        <div className="wrapper">
+        <div className="wrapper intro_wrapper">
           <div className="container intro">
             <div className="intro_text">
               <div>
@@ -47,13 +53,17 @@ function App() {
                   Contact Me __ <FontAwesomeIcon icon={faHeart} />
                 </button>
               </div>
-
-              
             </div>
 
             <div className="intro_img">
               <img src={process.env.PUBLIC_URL + "/img/img_3.png"} />
             </div>
+          </div>
+          
+          <div className="intro_scroll"> 
+            <span><FontAwesomeIcon icon={faComputerMouse}/></span>
+            <span>Scroll Down</span>
+            <span><FontAwesomeIcon icon={faArrowDown}/></span>
           </div>
         </div>
 
@@ -199,45 +209,171 @@ function App() {
             <div className="container portfolio">
               <h1>Portfolio</h1>
 
-              <div className="portfolio_wrap">
-                <div className="project_wrap">
-                  <span>Team Porject</span>
-                  <div className="project_item">
-                    <div className="project_img">
-                      <img src={process.env.PUBLIC_URL + "/img/project/letsVegan.png"} />
-                    </div>
-
-                    <div className="project_detail">
-                      <span className="project_title">Let's Vegan</span>
-                      <div className="project_intro">
-                        지도 API 기반 레스토랑 검색 플랫폼 서비스 
+              <div>
+                <div className="team_project project">
+                  <h2>Team Project</h2>
+                  <div className="project_wrap">
+                    
+                    <div className="porject_item">
+                      <div className="project_img">
+                        <img src={process.env.PUBLIC_URL + "/img/project/letsVegan.png"} />
                       </div>
-
-                      <div className="project_skill">
-                        
+                      <div className="porject_description">
+                        <div>
+                          <span>Let's Vegan</span>
+                          <span>지도 API 기반 비건 레스토랑 검색 플랫폼</span>
+                        </div>
+                        <div>
+                          <button>
+                            프로젝트 설명_
+                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                          </button>
+                        </div>
                       </div>
-                     
-                     
-                      <button>
-                        자세히보기__
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                      </button>
                     </div>
+              
 
+                    <div className="porject_item">
+                      <div className="project_img">
+                        <img src={process.env.PUBLIC_URL + "/img/project/artStroke.png"} />
+                      </div>
+                      <div className="porject_description">
+                        <div>
+                          <span>art Stroke</span>
+                          <span>작가와 팬이 소통하는 아트 편집샵 쇼핑몰</span>
+                        </div>
+                        <div>
+                          <button>
+                            프로젝트 설명_
+                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-
                 </div>
+
+                <div className="solo_project project">
+                  <h2>Solo Project</h2>
+                  <div className="project_wrap">
+                    
+                    <div className="porject_item">
+                      <div className="project_img">
+                        <img src={process.env.PUBLIC_URL + "/img/project/simpleShop.jpg"} />
+                      </div>
+                      <div className="porject_description">
+                        <div>
+                          <span>Simple Shop</span>
+                          <span>간단한 기능의 악세사리 쇼핑몰</span>
+                        </div>
+                        <div>
+                          <button>
+                            프로젝트 설명_
+                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+              
+
+                    <div className="porject_item">
+                      <div className="project_img">
+                        <img src={process.env.PUBLIC_URL + "/img/project/weeky.jpg"} />
+                      </div>
+                      <div className="porject_description">
+                        <div>
+                          <span>Weeky</span>
+                          <span>한 눈에 보는 위클리, 데일리 플래너</span>
+                        </div>
+                        <div>
+                          <button>
+                            프로젝트 설명_
+                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
+
+              
             </div>
 
           </div>
 
-          {/* Portfolio */}
+          {/* contact */}
           <div className="wrapper" id="Contact">
               <div className="container contact">
-                컨택미 컨택미 
+                <h1>Contact Me</h1>
+
+                <div className="contact_wrap">
+
+                  <div className="contact_info">
+
+                    <div className="info_box">
+                      <div className="info_box_left">
+                        <FontAwesomeIcon icon={faPhone}/>
+                      </div>
+                      <div className="info_box_right">
+                        <div>
+                          Phone
+                        </div>
+                        <div>
+                          010-4142-2397
+                        </div>
+                      </div>
+                    </div>
+                    <div className="info_box">
+                      <div className="info_box_left">
+                        <FontAwesomeIcon icon={faEnvelope}/>
+                      </div>
+                      <div className="info_box_right">
+                        <div>
+                          Email
+                        </div>
+                        <div>
+                          kdavin1221@gmail.com
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div className="contact_mail">
+                    <div className="mail_top">
+                      <div className="contact_box">
+                        <label for="name">Name</label>
+                        <input id="name" className="mail_input"/>
+                      </div>
+                      <div className="contact_box">
+                        <label for="email">Email</label>
+                        <input id="email" className="mail_input"/>
+                      </div>
+                    </div>
+
+                    <div className="mail_bottom">
+                      <label>Message</label>
+                      <textarea/>
+                    </div>
+
+                    <div className="mail_btn">
+                      <button>
+                        send_
+                        <FontAwesomeIcon icon={faPaperPlane}/>
+                      </button>
+                    </div>
+                    
+                  </div>
+
+                </div>
               </div>
           </div>
+
+
+          <TopBtn/>
 
 
         </div>

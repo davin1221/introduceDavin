@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     margin: 0;
 }
@@ -27,7 +30,6 @@ body{
   padding: 0px 5px;
   font-family: 'Pretendard-Regular';
   position: relative;
-  border: 1px solid red;
 }
 
 .wrapper { 
@@ -40,7 +42,7 @@ body{
 }
 
 .container { 
-    padding-top: 50px;
+    /* border: 1px solid pink; */
 }
 
 .grid{
@@ -98,6 +100,12 @@ body{
     align-items: center;
     justify-content: center;
     height: 50%;
+    width: 80%;
+}
+
+.intro_wrapper{
+    display: flex;
+    flex-direction: column;
 }
 
 .intro .intro_img{ 
@@ -153,7 +161,7 @@ body{
 }
 
 .intro .intro_text button { 
-    width: 40%;
+    padding: 0px 10px;
     height: 30px;
     border: none;
     border-radius: 5px ;
@@ -175,6 +183,35 @@ body{
     width: 100%;
     object-fit: cover;
     clip-path: circle(49%);
+}
+
+.intro_scroll { 
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.intro_scroll > span:nth-child(1){
+    color: var(--purple);
+    font-size: 20px;
+}
+.intro_scroll > span:nth-child(2){
+    font-size: var(--font-size-s);
+    color: gray;
+    margin: 0px 10px;
+}
+.intro_scroll > span:nth-child(3){
+    font-size: var(--font-size-s);
+    color: gray;
+    animation: scrollDown 0.8s
+               linear 0s
+            infinite alternate;
+}
+@keyframes scrollDown { 
+    0% {margin-top: -5px;}
+    100% {margin-top: 10px;}
 }
 
 
@@ -338,55 +375,226 @@ body{
 
 /* portfolio */
 .portfolio{
-    /* border: 1px solid red; */
     width: 80%;
 }
 
 .portfolio h1 { 
     font-size: var(--font-size-L);
+    margin-bottom: var(--title-margin);
     text-align: center;
 }
 
-.portfolio .project_wrap { 
-    /* border: 1px solid blue; */
 
-}
-
-.portfolio .project_wrap > span { 
-    font-size: 23px;
-    font-weight: bold;
-    color: #8b6add;    
-}
-
-.portfolio .project_item {
-    /* border: 1px solid red; */
-    margin-top: 20px;
-
-    display: flex;
-}
-
-.portfolio .project_item .project_img {
-    width: 300px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-}
-
-.portfolio .project_item .project_img img { 
-    width: 100%;
-}
-
-.portfolio .project_item .project_detail { 
-    /* border: 1px solid green; */
-    margin-left: 30px;
-}
-
-.portfolio .project_detail .project_title { 
-    font-size: var(--font-size-M);
+.portfolio .project h2 {
+    background-color: var(--purple);
+    color: white;
     border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+
 }
 
-.portfolio .project_detail .project_intro {
+.portfolio .team_project {
+    margin-bottom: 50px;
+}
+
+.portfolio .project .project_wrap{ 
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio .project .porject_item{
+    display: flex;
+    width: 48%;
+}
+
+.portfolio .porject_item .project_img { 
+    width: 200px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.portfolio .porject_item .project_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio .porject_item .porject_description{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.portfolio .porject_description > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio .porject_description > div > span:nth-child(1){
+    font-size: var(--font-size-M);
+    font-weight: bold;
+    color: var(--purple);
+}
+
+.portfolio .porject_description > div > span:nth-child(2){
     font-size: var(--font-size-s);
-    margin: 5px 0px;
     color: gray;
+    margin-top: 10px;
+}
+
+.portfolio .porject_item .porject_description > div:last-child{
+    display: inline-block;
+    text-align: end;
+}
+
+.portfolio .porject_item .porject_description button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--purple);
+}
+
+
+/* contact */
+.contact{
+    width: 80%;
+}
+
+.contact h1{
+    font-size: var(--font-size-L);
+    margin-bottom: var(--title-margin);
+    text-align: center;
+}
+
+.contact .contact_info{ 
+    width: 30%;
+}
+
+.contact .info_box{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.contact .info_box_left{
+    font-size: 35px;
+    color: var(--purple);
+}
+
+.contact .info_box_right{ 
+    margin-left: 15px;
+}
+
+.contact .info_box_right > div:first-child{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact .info_box_right > div:last-child{
+    color: gray;
+    margin-top: 10px;
+}
+
+
+
+
+.contact_wrap{
+    display: flex;
+    flex-grow: 1;
+}
+
+.contact .contact_mail{
+    flex-grow: 1;
+}
+
+.contact_mail .mail_top{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_mail .contact_box{ 
+    box-sizing: border-box;
+    position: relative;
+    width: 45%;
+}
+
+.contact_mail .contact_box input{ 
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid var(--purple) !important;
+    border-radius: 5px;
+    line-height: 1.45;
+    letter-spacing: 0.04rem;
+    padding: 0px 15px;
+}
+
+
+.contact_mail .contact_box label,
+.contact_mail .mail_bottom label{ 
+    display:  inline-block;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: white;
+    padding: 0px 5px;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.contact_mail .mail_bottom{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact_mail .mail_bottom textarea{ 
+    border: 1.5px solid var(--purple) !important;
+    border-radius: 5px;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+    height: 300px;
+}
+
+.contact_mail .mail_btn{ 
+    width: 100%;
+    text-align: end;
+    margin-top: 20px;
+}
+
+.contact_mail .mail_btn button{ 
+    background-color: var(--purple);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+
+/* Top Btn */
+.TopBtn{ 
+    width: 30px;
+    height: 30px;
+    background-color: var(--purple);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    cursor: pointer;
 }
