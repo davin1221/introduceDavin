@@ -1,14 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
+// import { useMediaQuery } from "react-responsive";
 
 const Nav = () => { 
+
+    // const tablet = useMediaQuery({ query : "(max-width:768px)"})
+    // const mobile = useMediaQuery({ query : "(max-width:480px)"})
+
+    
 
     const handleMenu = (menu) => { 
 
         const targetMenu = document.getElementById(menu)
         targetMenu.scrollIntoView({ behavior: 'smooth' });
-        // console.log(menu)
 
     }
 
