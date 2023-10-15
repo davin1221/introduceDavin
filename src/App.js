@@ -18,15 +18,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
 
-       
-
-        {/* <Routes>
-          <Route path="/" />
-          <Route path="/letsvegan" element={<LetsVegan/>}/>
-        </Routes> */}
-
-        
-
         <Nav />
         
         <Intro />

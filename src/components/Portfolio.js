@@ -27,7 +27,7 @@ const Portfolio = () => {
             
             <div className="porject_item">
               <div className="project_img">
-                <img src={process.env.PUBLIC_URL + "/img/project/letsVegan.png"} />
+                <img src={process.env.PUBLIC_URL + "/img/project/letsVegan.jpg"} />
               </div>
               <div className="porject_description">
                 <div>
@@ -46,7 +46,7 @@ const Portfolio = () => {
 
             <div className="porject_item">
               <div className="project_img">
-                <img src={process.env.PUBLIC_URL + "/img/project/artStroke.png"} />
+                <img src={process.env.PUBLIC_URL + "/img/project/artStroke.jpg"} />
               </div>
               <div className="porject_description">
                 <div>

@@ -4,10 +4,30 @@ import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 
 const Nav = () => { 
 
-    // const tablet = useMediaQuery({ query : "(max-width:768px)"})
-    // const mobile = useMediaQuery({ query : "(max-width:480px)"})
+    const setDarkMode = () => { 
+        document.querySelector("body").setAttribute('data-theme', 'dark')
+        localStorage.setItem("selectedTheme", "dark")
+    }
 
-    
+    const setLightMode = () => { 
+        document.querySelector("body").setAttribute('data-theme', 'light')
+        localStorage.setItem("selectedTheme", "light")
+    }
+
+    const selectedTheme = localStorage.getItem("selectedTheme");
+
+    if(selectedTheme === "dark") { 
+        setDarkMode();
+    }
+
+    const toogleTheme = (e) => { 
+        if(e.target.checked){
+            setDarkMode();
+        } else { 
+            setLightMode();
+        };
+    }
+
 
     const handleMenu = (menu) => { 
 
@@ -18,31 +38,34 @@ const Nav = () => {
 
     return <nav className="Nav">
         <div className="logo">
-            Davin
+            <img src={process.env.PUBLIC_URL + "/img/dvLogo.png"} />
         </div>
 
         <div className="full-width-nav">
             <ul>
                 <li onClick={()=>handleMenu("About")}>
                     About
-                    {/* <a href="#About">About</a> */}
                 </li>
                 <li onClick={()=>handleMenu("Skills")}>
                     Skill
-                    {/* <a href="#Skills">Skills</a> */}
                 </li>
                 <li onClick={()=>handleMenu("Portfolio")}>
                     Portfolio
-                    {/* <a href="#Portfolio">Portfolio</a> */}
                 </li>
                 <li onClick={()=>handleMenu("Contact")}>
                     Contact
-                    {/* <a href="#Contact">Contact</a> */}
                 </li>
             </ul>
 
             <div className="mode-btns">
-                <FontAwesomeIcon icon={faSun} />
+                <input className="dark_mode_input"
+                       type="checkbox"
+                       id="darkmode-toggle"
+                       onChange={toogleTheme}
+                       defaultChecked={selectedTheme === "dark"}/>
+                <label for="darkmode-toggle"
+                       data-checked="dark"
+                       data-unChecked="light" ></label>
             </div>
         </div>
     </nav>
