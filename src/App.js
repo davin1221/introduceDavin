@@ -9,19 +9,26 @@ import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import TopBtn from "./components/TopBtn";
-import LetsVegan from "./components/LetsVegan";
+
+
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="App">
+
+       
+
         {/* <Routes>
           <Route path="/" />
           <Route path="/letsvegan" element={<LetsVegan/>}/>
         </Routes> */}
 
-        <Nav />
+        
 
+        <Nav />
+        
         <Intro />
 
         <About />
