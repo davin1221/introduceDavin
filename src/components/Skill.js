@@ -3,6 +3,7 @@ import { faJava, faHtml5, faCss3Alt, faJs, faReact, faGithub } from "@fortawesom
 import { faOtter, faStore, faServer } from "@fortawesome/free-solid-svg-icons";
 
 
+// skill 컴포넌트
 const Skill = ({skillName}) => { 
 
     let skill; 
