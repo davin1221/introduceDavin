@@ -27,6 +27,8 @@ const Skills = () => {
               <Skill skillName={"JavaScript"} />
               <Skill skillName={"React"} />
               <Skill skillName={"Redux"} />
+              <Skill skillName={"jQuery"} />
+              <Skill skillName={"Ajax"} />
             </div>
           </div>
 
@@ -39,6 +41,7 @@ const Skills = () => {
             </div>
             <div className="item_bottom">
               <Skill skillName={"Java"} />
+              <Skill skillName={"Spring"} />
             </div>
           </div>
 
@@ -64,6 +67,7 @@ const Skills = () => {
             <div className="item_bottom">
               <Skill skillName={"Git"} />
               <Skill skillName={"dbeaver"} />
+              <Skill skillName={"STS"} />
             </div>
           </div>
         </div>

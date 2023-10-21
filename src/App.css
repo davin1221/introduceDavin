@@ -871,13 +871,14 @@ body {
   }
 
   .skills .skill_item .item_bottom {
-    margin: 0px 0px;
-    margin-bottom: 10px;
+    margin-top: 0px;
     padding-left: 45px;
+    margin: 10px 0px;
   }
 
   .SkillName {
     margin-bottom: 5px;
+    font-size: 13px;
   }
 
   /* portfolio */
@@ -1000,13 +1001,11 @@ body {
 
   /* skill */
   .skills .skill_item { 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .skills .skill_item .item_bottom {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    margin-top: 20px;
+
   }
 
   .mobile_menu {
