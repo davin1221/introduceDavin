@@ -32,7 +32,7 @@ const About = () => {
               </p>
 
               <div style={{ textAlign: "end" }}>
-                <a href={process.env.PUBLIC_URL + "이력서(김다빈).pdf"} download="이력서(김다빈)">
+                <a href={process.env.PUBLIC_URL + "/pdf/이력서(김다빈).pdf"} download="이력서(김다빈)">
                   Download CV__
                   <FontAwesomeIcon icon={faCloudArrowDown} />
                 </a>
