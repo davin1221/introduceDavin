@@ -956,6 +956,12 @@ body {
 }
 
 /* 모바일 / 태블릿 */
+@media (max-height: 850px) {
+  .project_detail_description .project_img > div { 
+    display: none;
+  }
+}
+
 @media (max-width: 820px) {
   /* intro */
   .intro {

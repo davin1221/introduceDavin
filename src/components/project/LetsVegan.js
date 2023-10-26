@@ -66,12 +66,6 @@ const LetsVegan = () => {
                     <FontAwesomeIcon icon={faGithub}/>
                 </span>
             </a>
-            <a href={process.env.PUBLIC_URL + "/pdf/LET'SVEGAN.pdf"} download="LET'SVEGAN">
-                <span>Download PDF</span>
-                <span>
-                    <FontAwesomeIcon icon={faFilePdf}/>
-                </span>
-            </a>
         </div>
     </div>
 

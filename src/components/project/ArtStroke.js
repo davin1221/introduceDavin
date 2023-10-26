@@ -49,13 +49,13 @@ const ArtStroke = () => {
             </div>
             <div className="project_img">
                 <div>
-                    <img src={process.env.PUBLIC_URL + "/img/ArtStroke/ArtStroke1.png"} alt="ArtStroke_img"/>
+                    <img src={process.env.PUBLIC_URL + "/img/ArtStroke/artStroke1.png"} alt="ArtStroke_img"/>
                 </div>
                 <div>
-                    <img src={process.env.PUBLIC_URL + "/img/ArtStroke/ArtStroke2.png"} alt="ArtStroke_img"/>
+                    <img src={process.env.PUBLIC_URL + "/img/ArtStroke/artStroke2.png"} alt="ArtStroke_img"/>
                 </div>
                 <div>
-                <img src={process.env.PUBLIC_URL + "/img/ArtStroke/ArtStroke3.png"} alt="ArtStroke_img"/>
+                <img src={process.env.PUBLIC_URL + "/img/ArtStroke/artStroke3.png"} alt="ArtStroke_img"/>
                 </div>
             </div>
             
@@ -67,12 +67,6 @@ const ArtStroke = () => {
                 <span>Git</span>
                 <span>
                     <FontAwesomeIcon icon={faGithub}/>
-                </span>
-            </a>
-            <a href={process.env.PUBLIC_URL + "/pdf/ArtStroke.pdf"} download="ArtStroke">
-                <span>Download PDF</span>
-                <span>
-                    <FontAwesomeIcon icon={faFilePdf}/>
                 </span>
             </a>
         </div>
