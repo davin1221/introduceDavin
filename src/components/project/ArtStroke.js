@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faFilePdf, } from "@fortawesome/free-solid-svg-icons";
+import { faClipboard } from "@fortawesome/free-solid-svg-icons";
 
 const ArtStroke = () => { 
     return <div className="project_detail_container">
@@ -67,6 +67,12 @@ const ArtStroke = () => {
                 <span>Git</span>
                 <span>
                     <FontAwesomeIcon icon={faGithub}/>
+                </span>
+            </a>
+            <a href="https://www.notion.so/ART-STROKE-FINAL-PROJECT-fcbf42dd6f214f0aa04a63aaa35d8716" target="blank">
+                <span>Notion</span>
+                <span>
+                    <FontAwesomeIcon icon={faClipboard}/>
                 </span>
             </a>
         </div>

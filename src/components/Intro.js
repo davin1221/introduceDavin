@@ -23,7 +23,7 @@ const Intro = () => {
             <span>Hi, I'm </span>
             <span>Davin</span>
           </div>
-          <span>Frontend Developer</span>
+          <span>Web Developer</span>
 
           <div className="intro_log">
             <a href="https://github.com/davin1221" target="blank">

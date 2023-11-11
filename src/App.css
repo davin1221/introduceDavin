@@ -651,7 +651,7 @@ body {
 
 .modal_container {
   background-color: var(--body_secondary-background);
-  width: 80%;
+  width: 70%;
   height: 80vh;
   border-radius: 10px;
   display: flex;
