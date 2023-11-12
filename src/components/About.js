@@ -1,129 +1,110 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowDown, faUser, faHashtag, faPlane } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCloudArrowDown,
+  faUser,
+  faPlane,
+  faCaretDown
+} from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const About = () => {
   // 미디어쿼리
   const pc = useMediaQuery({ query: "(min-width: 1024px)" });
-  const tabletAndMobile = useMediaQuery({ query: "(max-width: 1023px)" });
+  const mobile = useMediaQuery({ query: "(max-width: 479px)" });
 
   // 정보 오픈
   const [isClicked, setIsClicked] = useState(false);
-  const [aboutSub, setAboutSub] = useState();
+  const [aboutSub, setAboutSub] = useState(null);
 
-  const openIntroduce = (item) => { 
-    //  1. isClicked가 true일 땐 눌러도 isClicked false로 안바뀜
-    //  2. isClicked가 같은 item을 선택하거나 false일땐 반대로 바뀜 
-    if(isClicked === false || aboutSub === item) { 
-      setIsClicked(!isClicked)
-    } else { 
-      setAboutSub(item)
-      console.log("ㅇㅇ:: ", item)
+  const openIntroduce = (item) => {
+    // isClicked == false -> isClicked true
+    if (!isClicked) {
+      setIsClicked(true);
+      setAboutSub(item);
+      // isClicked true 인데 item도 같다면 false
+    } else if (isClicked && aboutSub === item) {
+      setIsClicked(false);
+
+      // 누를 때마다 item set
+    } else {
+      setAboutSub(item);
     }
-  }
+  };
 
   return (
     <div className="wrapper" id="About">
       <div className="container about">
         <h1>About Me</h1>
-
-        {pc && (
           <div className="about_introduce">
             <div className="about_first_line">
               <div className={`about_img about_img_${isClicked}`}>
-                <img src={process.env.PUBLIC_URL + "/img/img_about.jpeg"}/>
-              </div>
-            </div>
-           
-
-            <div className="about_second_line"> 
-                <div onClick={()=>openIntroduce("des")}>
-                   Describe Me
-                  <span><FontAwesomeIcon icon={faUser}/></span>
-                </div>
-                <div onClick={()=>openIntroduce("exp")}>
-                  <span><FontAwesomeIcon icon={faPlane}/></span>
-                  My Experience
-                </div>
-            </div>
-
-            <div className="about_third_line">
-              {
-                isClicked === true ? <div>{aboutSub}</div> : null
-              }
-            </div>
-          </div>
-
-        )}
-
-
-
-
-
-
-
-
-        
-        {tabletAndMobile && (
-          <div className="about_introduce_small">
-            <div className="about_top">
-              <div>
                 <img src={process.env.PUBLIC_URL + "/img/img_about.jpeg"} />
               </div>
+            </div>
 
-              <div>
-                
+            <div className="about_second_line">
+              <div onClick={() => openIntroduce("des")}>
+                Describe Me
+                <span>
+                  <FontAwesomeIcon icon={faUser} />
+                </span>
               </div>
-
-              <div>
-                <p>
-                  그동안 진로에 대해 고민하며 다양한 경험을 쌓아왔습니다. 이 과정에서 내가 진정으로 흥미를 느끼고 또 경력이 되어줄 직업과 직무가 무엇일까 항상 고민하던 중 '프로그래밍'이라는 분야를 알게되었습니다.
-                  어려운 길이지만 스스로 열심히 공부하고 일한다면 그것이 온전히 나의 경력이 되어줄 수 있을 것이며, 끊임없이 발전하는 현대 사회에서 트렌디함을 유지해야 하는 직무라는 것에도 큰 흥미를 느꼈습니다. 
-                  바로 학원에 등록하여 7개월간 JAVA, HTML, CSS, JavaScript, DB(Oracle) 등 풀스택을 공부하였고, 수료 후 컴포넌트 단위의 개발에 관심을 가지게 되어 React와 상태관리를 위한 Redux를 추가적으로 
-                  공부하였습니다. 앞으로도 저는 필요한 공부가 있다면 어느 것이든 배울 수 있는 기회를 감사히 여기고 늘 겸손한 마음을 가진 개발자로 성장하고 싶습니다. 
-                </p>
-
-                <div>
-                  <a href={process.env.PUBLIC_URL + "이력서(김다빈).pdf"} download="이력서(김다빈)">
-                    Download CV__
-                    <FontAwesomeIcon icon={faCloudArrowDown} />
-                  </a>
-                </div>
+              
+              <div onClick={() => openIntroduce("exp")}>
+                <span>
+                  <FontAwesomeIcon icon={faPlane} />
+                </span>
+                My Experience
               </div>
             </div>
 
-            <div className="about_bottom">
-              <div className="detail_box">
-                <span>Career</span>
-                <div className="detail_item">
-                  <span>2018.11 ~ 2022.07</span>
-                  <span>닷즈커뮤니케이션(주) 재무회계팀 사원</span>
-                </div>
-                <div className="detail_item">
-                  <span>2013.11 ~ 2015.05</span>
-                  <span>삼영전자공업(주) 인사팀 사원</span>
-                </div>
-              </div>
+            {
+              isClicked === true ? <div className="about_third_line">
+                {
+                  aboutSub == "des" ? 
+                  <div className="about_description">
+                    안녕하세요 신입 웹 개발자 <span>김다빈</span>입니다!<br/>
+                    저의 20대는 진로에 대한 고민과 선택의 연속이었습니다.<br/>
+                    그러던 중 <span>개발자</span>라는 직업을 알게 되었습니다.<br/>
+                    프로젝트를 진행하며 완성하고 오류를 고쳐가며 살면서 처음으로 <span>성취감</span>을 맛보았습니다.<br/>
+                    또, 밤낮으로 팀원들과 프로젝트를 하며 <span>팀워크</span>와 <span>협력</span>에 대한 것도 알게 되었습니다.<br/>
+                    공부는 어려웠지만, 그 어려움을 이기는 과정과 결과물이 너무나도 매력적이었기에 앞으로 저는 <span>개발자로서 성장해 보고자 합니다.</span>
+                    <p>#꼼꼼함 #성실함 #책임감 #온화함 #정직함 #모험심 </p>
+                  </div> 
+                  : 
+                  <div className="about_experience">
+                    <div className="about_experience_detail">
+                      <div>Career</div>
+                      <div className="detail_item">
+                        <span>2018.12 ~ 2020.07</span>
+                        <span>닷즈커뮤니케이션 재무회계팀</span>
+                      </div>
+                      <div className="detail_item">
+                        <span>2013.11 ~ 2015.05</span>
+                        <span>삼영전자공업 인사팀</span>
+                      </div>
+                    </div>
 
-              <div className="detail_box">
-                <span>Education</span>
-                <div className="detail_item">
-                  <span>2022.11 ~ 2023.07</span>
-                  <span>KH정보교욱원 Java기반 개발자 과정 수료</span>
-                </div>
-                <div className="detail_item">
-                  <span>2016.03 ~ 2018.02</span>
-                  <span>신구대학교 자원동물과 졸업</span>
-                </div>
-                <div className="detail_item">
-                  <span>2011.03 ~ 2014.02</span>
-                  <span>분당경영고등학교 시각디자인과 졸업</span>
-                </div>
-              </div>
-            </div>
+                    <div className="about_experience_detail">
+                      <div>Education</div>
+                      <div className="detail_item">
+                        <span>2022.11 ~ 2022.07</span>
+                        <span>KH정보교육원</span>
+                      </div>
+                      <div className="detail_item">
+                        <span>2016.03 ~ 2018.02</span>
+                        <span>신구대학교 애완동물전공</span>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
+                }
+                </div> : null 
+            }
+
           </div>
-        )}
+
       </div>
     </div>
   );
