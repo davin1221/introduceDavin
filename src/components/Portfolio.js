@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faCaretDown, faCar } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Modal from "./Modal";
 
@@ -42,104 +42,74 @@ const Portfolio = () => {
       <div className="container portfolio">
         <h1>Portfolio</h1>
 
-        <div> 
-          {/* Team Project */}
-          <div className="team_project project">
-            <h2>Team Project</h2>
-            <div className="project_wrap">
-              <div className="porject_item">
-                <div className="project_img">
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/project/letsVegan.jpg"}
-                  />
-                </div>
-                <div className="porject_description">
-                  <div>
-                    <span>Let's Vegan</span>
-                    <span>지도 API 기반 비건 레스토랑 검색 플랫폼</span>
-                  </div>
-                  <div>
-                    <button onClick={()=>modalOpen("LetsVegan")}> 
-                      프로젝트 설명_
-                      <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                  </div>
+        <div>
+          <div className="project_left">
+            <img src={process.env.PUBLIC_URL + "/img/ArtStroke/artStroke1.png"} />
+          </div>
+
+          <div className="project_right">
+            <div className="project_select">
+              <div className="project_select_item">
+                <span>Team</span>
+                <ul>
+                  <li>Let's Vegan</li>
+                  <li>art Stroke</li>
+                </ul>
+              </div>
+
+              <div className="project_select_item">
+                <span>Solo</span>
+                <ul>
+                  <li>Memo</li>
+                  <li>Simple Shop</li>
+                  <li>Weeky</li>
+                </ul>
+              </div>
+              
+            </div>
+
+            <div className="proeject_description">
+              <div className="description_item">
+                <span>기획 의도</span>
+                <span>카카오 지도 API를 활용한 레스토랑의 위치를 지도로 구현하여 채식에 대한 관심을 증가시킬 수 있도록 정보를 제공</span>
+              </div>
+
+              <div className="description_item">
+                <span>개발 기간</span>
+                <span>2022.07.01 ~ 07.22</span>
+              </div>
+
+              <div className="description_item skill">
+                <span>기술 스택</span>
+                <div>
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>React</span>
+                  <span>Redux</span>
                 </div>
               </div>
 
-              <div className="porject_item">
-                <div className="project_img">
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/project/artStroke.jpg"}
-                  />
-                </div>
-                <div className="porject_description">
-                  <div>
-                    <span>Art Stroke</span>
-                    <span>작가와 팬이 소통하는 아트 편집샵 쇼핑몰</span>
-                  </div>
-                  <div>
-                    <button  onClick={()=>modalOpen("ArtStroke")}>
-                      프로젝트 설명_
-                      <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                  </div>
-                </div>
+              <div className="description_item">
+                <span>담당 및 참여도</span>
+                <span>퍼블리싱(70%), 메인페이지(상품조회), 마이페이지(정보CRUD)</span>
               </div>
+
+              <div className="description_item">
+                <span>개발 소감</span>
+                <span>기획과 뭐에 있어 아쉬웠던 점이 많았다. 다음 프로젝트 때는 이를 발판 삼아 어쩌구 하는 것이 좋겠다.</span>
+              </div>
+
+              <div className="description_btn">
+                <a href="#">Git</a>
+              </div>
+             
             </div>
           </div>
-          {/* Team Project end */}
 
-          {/* Solo Project end */}
-          <div className="solo_project project">
-            <h2>Solo Project</h2>
-            <div className="project_wrap">
-              <div className="porject_item">
-                <div className="project_img">
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/project/simpleShop.jpg"}
-                  />
-                </div>
-                <div className="porject_description">
-                  <div>
-                    <span>Simple Shop</span>
-                    <span>간단한 기능의 악세사리 쇼핑몰</span>
-                  </div>
-                  <div>
-                    <button onClick={()=>modalOpen("SimpleShop")}>
-                      프로젝트 설명_
-                      <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                  </div>
-                </div>
-              </div>
+        </div>
 
-              <div className="porject_item">
-                <div className="project_img">
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/project/weeky.jpg"}
-                  />
-                </div>
-                <div className="porject_description">
-                  <div>
-                    <span>Weeky</span>
-                    <span>한눈에 보는 위클리, 데일리 플래너</span>
-                  </div>
-                  <div>
-                    <button onClick={()=>modalOpen("Weeky")}>
-                      프로젝트 설명_
-                      <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> {/* Solo Project end */}
-        </div> {/* project wrap end */}
-      </div>  {/* container end */}
-      {
-          modalIsOpen ? <Modal project={targetProject} modalClose={closeModal}/> : null
-        }
+      </div>
     </div> // wrapper end 
   );
 };
